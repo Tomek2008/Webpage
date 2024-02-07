@@ -64,10 +64,6 @@ def check_maska_wprowadzania(mail):
     else:
         return False
 
-def generatecode():
-    code = random.randint(10000 , 99999)
-    return code
-
 def verifycode(x , y):
     print("AA")
     if x==y:
@@ -95,13 +91,11 @@ if st.session_state.show:
         if imie and mail:
             if check_maska_wprowadzania(mail):
                 if not check_email_duplicate(mail):
-                    save_code = generatecode()
                     tytul1 = f"Potwierdzenie chęci udziału"
                     tresc1 = (
                         f"Witaj, {imie}. "
                         f"Właśnie zapisałeś się do grupy modlitewnej. Przez następny rok będziesz otrzymywał modlitwy, "
                         f"które będą zmieniać się co tydzień. Jest 15 modlitw, więc każdą modlitwę będziesz odprawiał około 4 razy. "
-                        f"Wpisz ten kod weryfikacyjny do programu, aby potwierdzić chęci wpisania na stronę ten kod: {save_code}"
                     )
                     st.warning(f"Wysyłanie e-maila na {mail}, czekaj")
                     if send_mail(mail, tytul=tytul1, tresc=tresc1):
@@ -117,19 +111,4 @@ if st.session_state.show:
         else:
             st.warning("Wprowadz obie wartości")
 
-if show_verify:
-    st.write(save_code)
-    user_code = st.text_input("Zweryfikuj kod")
-
-    with st.form("verification_form"):
-        verify_button_clicked = st.form_submit_button("Zweryfikuj kod")
-
-        print(f"Button Clicked: {verify_button_clicked}")  # Add this line for debugging
-        print(f"user_code: {user_code}")  # Add this line for debugging
-
-        if verify_button_clicked and user_code:  # Ensure user_code is not empty
-            print("Button clicked!")  # Add this line for debugging
-            print("HERE")  # Add this line for debugging
-
-            verifycode(save_code, int(user_code))
 

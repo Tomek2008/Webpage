@@ -1,10 +1,11 @@
 import streamlit as st
 
+ARCHIWUM = "archiwum.txt"
 CSS_FILE = "style/style.css"
 
 st.set_page_config(page_title="Żywa Tajemnica szczęścia", page_icon=":smile:" , layout="wide")
 
-col1 , col2 , col3 = st.columns([0.5 ,9 , 0.5])
+col1 , col2 , col3 = st.columns([0.1 ,9.8 , 0.1])
 
 
 st.write("---")
@@ -15,10 +16,4 @@ with col2:
 with open(CSS_FILE) as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-
-st.title("Kontakt/Inicjatywa , skontaktuj się z nami")
-
-
-message_mail = st.text_input("Twój e-mail")
-message_area = st.text_area("Twoja wiadomośc")
-
+#st.text_area("Twoje świadectwo")

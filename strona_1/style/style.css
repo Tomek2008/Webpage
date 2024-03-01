@@ -1,2 +1,17 @@
+<style>
 #MainMenu {visibility: hidden;}
-header {visibility: hidden;}
+footer {visibility: hidden;}
+
+.stSidebar > div:nth-child(1) > div > div > div > div > div > div > div > div > div {
+    visibility: hidden;
+}
+
+.stSidebar > div:nth-child(1) > div > div > div > div > div > div > div > div > div:before {
+    content: '...';
+    visibility: visible;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}

@@ -266,4 +266,32 @@ if st.button("Zobacz grupy"):
 
 st.write("---")
 
+footer="""<style>
+a:link , a:visited{
+color: 091833;
+background-color: lightblue;
+text-decoration: underline;
+}
+
+a:hover,  a:active {
+color: black;
+background-color: transparent;
+text-decoration: underline;
+}
+
+.footer {
+position: fixed;
+left: 5;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='display: block; text-align: center;' href="https://www.heflin.dev/" target="_blank">Heflin Stephen Raj S</a></p>
+</div>
+"""
+st.markdown(footer,unsafe_allow_html=True)
 footer()

@@ -22,7 +22,7 @@ def f_archiwum():
         st.write("###")
 
     with col2:
-        st.header("Nazwisko")
+        st.header("Data")
         st.write("###")
         st.write("###")
 

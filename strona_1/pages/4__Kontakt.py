@@ -20,5 +20,5 @@ st.title("Kontakt/Inicjatywa , skontaktuj się z nami")
 
 
 message_mail = st.text_input("Twój e-mail")
-message_area = st.text_area("Twoja wiadomośc")
+message_area = st.text_area("Napisz wiadomość")
 
